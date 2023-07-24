@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: white;
+  font-size: 10px;
+}
+
+body {
+  position: relative;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  max-width: 1024px;
+  margin: auto;
+  height: 100vh;
+  font-family: 'Poppins', Tahoma, sans-serif;
+  
+}
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Primeira seção contento somente a aplicação do simulador */
+#aplicacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Cabeçalho da aplicação */
+#aplicacao header {
+  text-shadow: 10px rgb(3, 80, 28);
+  margin-top: 50px;
+  margin-bottom: 25px;
+  max-width: 80%;
+  
+ 
+  
+}
+
+#aplicacao header h1 {
+  font-size: 4em;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 90px;
+  background-color: rgb(3, 80, 28);
+ 
+}
+
+#aplicacao header h2 {
+  font-size: 2em;
+  font-weight: 600;
+  text-align: center;
+  background-color:rgb(3, 80, 28);
+  
+}
+
+/* Container geral da entrada de dados */
+#mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Poppins';
+  
+}
+
+/* Área dos label's e input's */
+#entradaDados {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+ 
+}
+
+/* Container com um par label + input */
+.dados {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 45%;
+ 
+}
+
+/* Estilizando apenas os label's */
+.dados label {
+  font-size: 1.8em;
+  text-shadow: 1px 1.5px black;
+  
+}
+
+/* Estilizando apenas os input's */
+.dados input {
+  border: solid rgb(3, 80, 28) 1px;
+  border-radius: 30px;
+  box-shadow: 3px 2px rgb(3, 80, 28);
+  padding: 10px;
+  font-size: 1.3em;
+}
+
+.dados input::placeholder {
+  font-style: italic;
+  font-size: 1.1em;
+}
+
+/* Área onde se escolhe a carência e calcula os dados */
+#carencia {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#carencia div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.7em;
+  text-shadow: 1px 1.5px rgb(3, 80, 28);
+}
+
+#listaCarencia {
+  visibility: hidden;
+  width: 30%;
+  border: solid rgb(3, 80, 28) 1px;
+  border-radius: 30px;
+  box-shadow: 2px 2px rgb(3, 80, 28);
+  font-size: 1.5em;
+}
+
+/* Estilza os botões de Simulação e Nova Simulação */
+.cta {
+  font-size: 2.3em;
+  font-weight: 600;
+  color: white;
+  text-shadow: 1px;
+  min-width: 40%;
+  margin: auto;
+  border: solid rgb(117, 248, 10) 1px;
+  border-radius: 30px;
+  box-shadow: 1px 1px rgb(117, 248, 10);
+  background-color: rgb(3, 80, 28);
+  padding: auto;
+}
+
+/* Segunda seção contendo os resultados da simulação */
+#resultados {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Tabela de resultados */
+#tabelaCompleta,
+thead {
+  border: 3px solid rgb(244, 255, 248);
+  border-collapse: collapse;
+  min-width: 60%;
+}
+
+#tabelaCompleta th,
+td {
+  padding: 7px;
+  font-family: 'Oswald';
+  font-size: 1.8em;
+  font-weight: 500;
+  text-shadow: 1px 1px rgb(3, 80, 28);
+}
+
+#tabelaCompleta th {
+  background-color: rgba(3, 80, 28);
+}
+
+#tabelaCompleta tr:nth-child(odd) {
+  background-color: rgb(3, 80, 28);
+}
+
+#tabelaCompleta tr:nth-child(even) {
+  background-color: rgba(225, 225, 225, 0.8);
+}
+
+#btnNovaSimulacao {
+  margin: 30px;
+}
+
+/* Media Query - Responsividade de Telas */
+@media (max-width: 1024px) {
+  html {
+    font-size: 8px;
+  }
+
+  #mainContainer {
+    justify-content: center;
+  }
+
+  #entradaDados {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dados {
+    align-items: center;
+    margin-top: 7px;
+    width: 80%;
+  }
+
+  #carencia {
+    justify-content: center;
+    align-items: center;
+  }
+
+  #listaCarencia {
+    width: 40%;
+    margin-left: 5px;
+  }
+
+  #tabelaCompleta {
+    padding: auto;
+    min-width: 70%;
+  }
+  .cta {
+    width: 80%;
+    font-size: 1.8em;
+  }
+}
+
+@media (max-width: 600px) {
+  .cta {
+    width: 80%;
+    font-size: 1.7em;
+  }
+
+  #tabelaCompleta th,
+  td {
+    padding: 5px;
+    font-size:1em;
+  }
+}
